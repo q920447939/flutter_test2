@@ -1,0 +1,24 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "flutter_test2"
+include ':app'
+
+
+
+setBinding(new Binding([gradle: this]))                                // new
+println 1232132131
+println settingsDir.parentFile
+def file = new File(                                                     // new
+        settingsDir.parentFile,                                              // new
+        "flutter_test2/flutter_test2_module/.android/include_flutter.groovy"                         // new
+)
+println file.absolutePath
+evaluate(file)
